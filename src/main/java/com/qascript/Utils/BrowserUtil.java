@@ -1,8 +1,15 @@
 package com.qascript.Utils;
 
 import com.qascript.BaseClass;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -32,5 +39,19 @@ public class BrowserUtil  extends BaseClass {
     public static void enterText(String element, String text){
         findAndWaitForElement(element).clear();
         findAndWaitForElement(element).sendKeys(text);
+    }
+
+    public static void validateText(String element, String expectedText) {
+        String actualText = findAndWaitForElement(element).getText();
+        Assert.assertTrue("Expected Text: "+ expectedText +" is not matching Actual Text: "+ actualText,
+                expectedText.equals(actualText));
+    }
+
+    public static void hoverAndClickOnElement(String element1, String element2){
+        WebElement e1 = findAndWaitForElement(element1);
+        WebElement e2 = findAndWaitForElement(element2);
+
+        Actions actions = new Actions(driver);
+        actions.moveToElement(e1).click(e2).build().perform();
     }
 }

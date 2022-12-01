@@ -11,6 +11,7 @@ public class LoginPage extends BaseClass {
     private static String PasswordXpath = "//input[@id='input-password']";
     private static String LoginBtnXpath = "//input[@value='Login']";
     private static String ForgottenPasswordXpath = "(//a[text()='Forgotten Password'])[1]";
+    private static String alertLoginError = "//div[contains(@class,'alert-danger')]";
 
     public static void enterEmail(String email) {
         BrowserUtil.enterText(EmailXpath,email);
@@ -26,5 +27,9 @@ public class LoginPage extends BaseClass {
 
     public static void clickForgottenPassword() {
         BrowserUtil.clickElement(ForgottenPasswordXpath);
+    }
+
+    public static void validateInvalidLogin(String expectedMessage) {
+        BrowserUtil.validateText(alertLoginError,expectedMessage);
     }
 }
