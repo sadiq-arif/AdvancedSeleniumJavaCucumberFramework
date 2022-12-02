@@ -52,4 +52,22 @@ public class LoginStepDefinition extends BaseClass {
     public void errorMessageIsDisplayed(String message) {
         LoginPage.validateInvalidLogin(message);
     }
+
+    @Given("User is logged into the website")
+    public void userIsLoggedIntoTheWebsite() {
+        userEntersValidUsernameInEmailField();
+        userEntersValidPasswordInPasswordField();
+        userClicksOnLoginButton();
+        userIsLoggedInSuccessfully();
+    }
+
+    @Given("user enter email from excel data")
+    public void userEnterEmailFromExcelData() {
+        LoginPage.getUsername();
+    }
+
+    @And("user enter password from excel data")
+    public void userEnterPasswordFromExcelData() {
+        LoginPage.getPassword();
+    }
 }

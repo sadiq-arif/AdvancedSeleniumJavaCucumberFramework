@@ -7,6 +7,12 @@ Feature: User Login
     When  user clicks on login button
     Then  user is logged in successfully
 
+    @regression
+    Scenario: Insert Data from excel sheet
+      Given user enter email from excel data
+      And   user enter password from excel data
+      Then  user clicks on login button
+
   @regression
   Scenario Outline: User is not able to login with invalid credentials
     Given user enters invalid <email> in email field

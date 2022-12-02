@@ -1,6 +1,7 @@
 package com.qascript;
 
 import com.qascript.Utils.PropertiesUtil;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import java.util.Properties;
 import static com.qascript.Utils.GetBrowserDriver.getBrowserDriver;

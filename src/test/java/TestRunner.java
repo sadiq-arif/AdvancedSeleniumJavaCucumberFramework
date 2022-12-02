@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "html:target/cucumber.html",
                 "json:target/cucmber.json"
         },
-        tags = "@smoke",
+        tags = "@regression",
         publish = true
 )
 public class TestRunner {

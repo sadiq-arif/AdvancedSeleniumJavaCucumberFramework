@@ -54,4 +54,10 @@ public class BrowserUtil  extends BaseClass {
         Actions actions = new Actions(driver);
         actions.moveToElement(e1).click(e2).build().perform();
     }
+
+    public static void validateValue(String element, String expectedValue, String attributeType) {
+        String actualValue = findAndWaitForElement(element).getAttribute(attributeType);
+        Assert.assertTrue("Expected Value: " + expectedValue + " is not matching with Actual Value: " + actualValue,
+                expectedValue.equals(actualValue));
+    }
 }
