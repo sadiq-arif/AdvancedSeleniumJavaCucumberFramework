@@ -8,3 +8,4 @@ Selenium Test Project with some of the following important keypoints
 5) In-built cucumber reporting.
 6) Added the concept of Cucumber Hooks, Cucumber's Scenario Outline.
 7) Added the Excel Sheet Dependency as well.
+8) Some in-depth level of abstraction i.e when run any feature file/step. It redirects to stepDefiniton then after to the where the method/locator is written then to the method where user wants to click/enter text or button.
