@@ -3,6 +3,7 @@ Feature: Add products to Shopping Cart
   Background:
     Given User is logged into the website
 
+    @regression
     Scenario: User is able to add products into the shopping cart
       Given user clicks on Show All Notebooks and Laptops link
       And   user clicks on Macbook product
